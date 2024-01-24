@@ -3,16 +3,19 @@ const { userModel } = require("../models");
 
 const registerUser = async (req, res) => {
 
+    const { name, phone, password } = req.body;
+    const otp = Math.floor(1000 + Math.random() * 9000);
+
     const user = await userModel.create({
 
-        name: req.body.name,
-        phone: req.body.phone,
-        password: req.body.password
+        name,
+        phone,
+        password,
+        otp
 
     })
 
-    console.log(user);
-    // res.json(user);
+    res.json({ message: "check your mail for otp" });
 
 }
 

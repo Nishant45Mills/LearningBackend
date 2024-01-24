@@ -8,7 +8,7 @@ app.use(express.json());
 
 app.use('/', route);
 
-mongoose.connect(process.env.MONGODB_URL).then((data) => {
+mongoose.connect(process.env.MONGODB_URL,{ useNewUrlParser: true }).then((data) => {
 
     console.log("db connected successfully");
 

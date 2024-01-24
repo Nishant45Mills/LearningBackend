@@ -17,9 +17,6 @@ const userSchema = mongoose.Schema({
 
         type: String,
         required: [true, 'please enter Password']
-    },
-    otp: {
-        type: String,
     }
 }, {
 
